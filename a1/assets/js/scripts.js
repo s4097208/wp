@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const fileInput = document.querySelector('input[type="file"]');
-  fileInput.addEventListener("change", function () {
-    const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.webp)$/i;
-    if (!allowedExtensions.exec(fileInput.value)) {
-      alert("Only JPG, JPEG, PNG, GIF, or WEBP files are allowed.");
-      fileInput.value = "";
+
+const fileInput = document.getElementById('skillImage');
+const errorMsg = document.getElementById('errorMsg');
+
+fileInput.addEventListener('change', function () {
+    errorMsg.style.display = 'none'; 
+
+    if (!this.value.match(/.(jpg|jpeg|png|gif|webp|svg)$/i)) {
+        errorMsg.style.display = 'block';
+        this.value = ''; 
     }
-  });
+});
 });
