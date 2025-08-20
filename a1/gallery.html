@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src ="assets/js/scripts.js" defer></script>
 </head>
 <body>
 
@@ -46,51 +47,51 @@
     
     <div class="row g-4 skills-gallery">
       <!-- Image 1 -->
-      <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/1.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/1.png">
-        <p class="text-center pt-2">BEGINNER GUITAR LESSONS </p>
+      <div class="col-6 col-md-4 col-lg-3"> <!-- bootstrap for page size in sm, md, and large -->
+        <img src="assets/images/skills/1.png" class="img-fluid rounded" alt="Skill 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/1.png">
+        <p class="text-center pt-2">Beginner Guitar Lessons </p> <!-- padding top_ text location -->
       </div>
 
       <!-- Image 2 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/2.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/2.png">
-        <p class="text-center pt-2">INTERMEDIATE FINGERSTYLE </p>
+        <img src="assets/images/skills/2.png" class="img-fluid rounded" alt="Skill 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/2.png">
+        <p class="text-center pt-2">Intermediate Fingerstyle </p>
       </div>
 
       <!-- Image 3 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/3.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/3.png">
-        <p class="text-center pt-2">ARTISAN BREAD MAKING </p>
+        <img src="assets/images/skills/3.png" class="img-fluid rounded " alt="Skill 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/3.png">
+        <p class="text-center pt-2">Artisan Bread Making </p>
       </div>
 
       <!-- Image 4 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/4.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/4.png">
-        <p class="text-center pt-2">FRENCH PASTRY MAKING </p>
+        <img src="assets/images/skills/4.png" class="img-fluid rounded" alt="Skill 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/4.png">
+        <p class="text-center pt-2">French Pastry Making </p>
       </div>
 
       <!-- Image 5 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/5.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/5.png">
-        <p class="text-center pt-2">WATERCOLOR BASICS </p>
+        <img src="assets/images/skills/5.png" class="img-fluid rounded " alt="Skill 5" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/5.png">
+        <p class="text-center pt-2">Watercolor Basics</p>
       </div>
 
       <!-- Image 6 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/6.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/6.png">
-        <p class="text-center pt-2">DIGITAL ILLUSTRATION WITH PROCREATE </p>
+        <img src="assets/images/skills/6.png" class="img-fluid rounded" alt="Skill 6" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/6.png">
+        <p class="text-center pt-2">Digital Illustration With Procreate </p>
       </div>
 
       <!-- Image 7 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/7.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/7.png">
-        <p class="text-center pt-2">MORNING VINYASA FLOW </p>
+        <img src="assets/images/skills/7.png" class="img-fluid rounded" alt="Skill 7" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/7.png">
+        <p class="text-center pt-2">Morning Vinyasa Flow </p>
       </div>
 
       <!-- Image 8 -->
       <div class="col-6 col-md-4 col-lg-3">
-        <img src="assets/images/skills/8.png" class="img-fluid rounded shadow-sm gallery-img" alt="Skill 8" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/8.png">
-        <p class="text-center pt-2">INTRO TO PHP & MYSQL </p>
+        <img src="assets/images/skills/8.png" class="img-fluid rounded " alt="Skill 8" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="assets/images/skills/8.png">
+        <p class="text-center pt-2">Intro To PHP & MYSQL </p>
       </div>
 
     </div>
@@ -98,10 +99,10 @@
 
   <!-- Modal -->
   <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
         <div class="modal-body p-0">
-          <img id="modalImage" src="" class="img-fluid w-100 rounded" alt="Skill Image">
+          <img id="modalImage" src="" class="img-fluid" alt="Skill Image">
         </div>
         <div class="modal-footer justify-content-center">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -111,23 +112,12 @@
   </div>
   <!-- Footer -->
   <div class="footer">
-    <p class="footer-text mb-0">© 2025 Tamana Ali. All rights reserved.</p>
+    <p class="footer-text mb-0">© 2025 Tamana Ali. All rights reserved.</p>   <!-- b_bottom, t_top, m_margin,  -->
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Modal Script -->
-  <script>
-    const galleryImages = document.querySelectorAll('.gallery-img');
-    const modalImage = document.getElementById('modalImage');
 
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        const src = img.getAttribute('data-img');
-        modalImage.src = src;
-      });
-    });
-  </script>
 </body>
 </html>
