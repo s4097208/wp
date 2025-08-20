@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = document.querySelectorAll('[data-bs-target="#imageModal"]');
+    const modalImage = document.getElementById('modalImage');
 
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        const src = img.getAttribute('data-img');
+        modalImage.src = src;
+      });
+    });
 const fileInput = document.getElementById('skillImage');
 const errorMsg = document.getElementById('errorMsg');
 
