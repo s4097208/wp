@@ -1,19 +1,25 @@
 <?php
-
 $pageTitle = "All Skills - SkillSwap";
 include 'includes/header.inc';
 include 'includes/db_connect.inc';
+
+$sql = "SELECT * FROM skills";
+$records = $conn->query($sql);
 ?>
 
-  <!-- All Skills Section -->
-  <div class="container my-5">
-    <h2 class="mb-4" >All Skills</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="assets/images/skills_banner.png" alt="Skills Illustration" class="img-fluid rounded">
-      </div>
-      <div class="col-md-8">
-        <table class="table-striped table table-bordered skills-table">
+<!-- All Skills Section -->
+<div class="container my-5">
+  <h2 class="mb-4">All Skills</h2>
+  <div class="row">
+    <!-- Banner Image -->
+    <div class="col-md-4">
+      <img src="assets/images/skills_banner.png" alt="Skills Illustration" class="img-fluid rounded">
+    </div>
+
+    <!-- Skills Table -->
+    <div class="col-md-8">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered skills-table">
           <thead>
             <tr>
               <th>Title</th>
@@ -23,58 +29,27 @@ include 'includes/db_connect.inc';
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Beginner Guitar Lessons</td>
-              <td>Music</td>
-              <td>Beginner</td>
-              <td>30.00</td>
-            </tr>
-            <tr>
-              <td>Intermediate Fingerstyle</td>
-              <td>Music</td>
-              <td>Intermediate</td>
-              <td>45.00</td>
-            </tr>
-            <tr>
-              <td>Artisan Bread Baking</td>
-              <td>Cooking</td>
-              <td>Beginner</td>
-              <td>25.00</td>
-            </tr>
-            <tr>
-              <td>French Pastry Making</td>
-              <td>Cooking</td>
-              <td>Expert</td>
-              <td>50.00</td>
-            </tr>
-            <tr>
-              <td>Watercolor Basics</td>
-              <td>Art</td>
-              <td>Beginner</td>
-              <td>20.00</td>
-            </tr>
-            <tr>
-              <td>Digital Illustration with Procreate</td>
-              <td>Art</td>
-              <td>Intermediate</td>
-              <td>40.00</td>
-            </tr>
-            <tr>
-              <td>Morning Vinyasa Flow</td>
-              <td>Wellness</td>
-              <td>Intermediate</td>
-              <td>35.00</td>
-            </tr>
-            <tr>
-              <td>Intro to PHP &amp; MySQL</td>
-              <td>Programming</td>
-              <td>Expert</td>
-              <td>55.00</td>
-            </tr>
+            <?php
+            if ($records && $records->num_rows > 0) {
+              foreach ($records as $row) {
+                echo "<tr>";
+                echo "<td><a href='details.php?id=" . $row['skill_id'] . "'>" . htmlspecialchars($row['title']) . "</a></td>";
+                echo "<td>" . htmlspecialchars($row['category']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['level']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['rate_per_hr']) . "</td>";
+                echo "</tr>";
+              }
+            } else {
+              echo "<tr><td colspan='4' class='text-center'>No skills available</td></tr>";
+            }
+            ?>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+</div>
 
-  <?php include 'includes/footer.inc'; ?>
+<?php include 'includes/footer.inc'; ?>
+</body>
+</html>
