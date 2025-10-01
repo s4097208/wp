@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Home - SkillSwap';
 include 'includes/header.inc';
+include 'includes/db_connect.inc';
 
 ?>
 
