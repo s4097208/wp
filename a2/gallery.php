@@ -3,6 +3,7 @@
 
 $pageTitle = "Gallery - SkillSwap";
 include 'includes/header.inc';
+include 'includes/db_connect.inc';
 ?>
 
 <body>
