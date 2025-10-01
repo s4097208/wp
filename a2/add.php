@@ -25,13 +25,13 @@ include 'includes/header.inc';
       </div>
 
       <div class="mb-3">
-        <label for="ratePerHour" class="form-label">Rate per Hour ($) <span class="required">*</span></label>
-        <input type="number" class="form-control" id="ratePerHour" name="ratePerHour" placeholder="Enter Rate per Hour" min="0" step="0.1" required />
+        <label for="rate_per_hr" class="form-label">Rate per Hour ($) <span class="required">*</span></label>
+        <input type="number" class="form-control" id="rate_per_hr" name="rate_per_hr" placeholder="Enter Rate per Hour" min="0" step="0.1" required />
       </div>
 
       <div class="mb-3">
-        <label for="skillLevel" class="form-label">Skill Level <span class="required">*</span></label>
-        <select class="form-select" id="skillLevel" name="skillLevel" required>
+        <label for="level" class="form-label">Skill Level <span class="required">*</span></label>
+        <select class="form-select" id="level" name="level" required>
           <option value="" disabled selected>Please select</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate">Intermediate</option>
@@ -44,7 +44,7 @@ include 'includes/header.inc';
         <input type="file" class="form-control" id="skillImage" name="skillImage" accept="image/*" required />
       </div>
 
-      <div id="errorMsg" class="alert alert-danger mb-3 d-none">
+      <div id="errorMsg" class="alert alert-danger mb-3">
         Only image files are allowed (JPG, PNG, GIF, WEBP).
       </div>
 
