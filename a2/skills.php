@@ -2,6 +2,7 @@
 
 $pageTitle = "All Skills - SkillSwap";
 include 'includes/header.inc';
+include 'includes/db_connect.inc';
 ?>
 
   <!-- All Skills Section -->
