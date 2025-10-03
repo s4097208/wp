@@ -10,7 +10,7 @@ $records = $conn->query($sql);
 <main class="flex-grow-1 my-4 d-flex justify-content-center">
   <section class="main-container container-fluid">
     <div class="mb-4 text-center">
-      <h1>Skills Gallery</h1>
+      <h2>Skills Gallery</h2>
       <p class="text-muted">Browse skills shared by the community</p>
     </div>
 
@@ -58,5 +58,4 @@ $records = $conn->query($sql);
 </main>
 
 <?php include 'includes/footer.inc'; ?>
-</body>
-</html>
+

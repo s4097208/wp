@@ -51,5 +51,3 @@ $records = $conn->query($sql);
 </div>
 
 <?php include 'includes/footer.inc'; ?>
-</body>
-</html>
