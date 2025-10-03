@@ -8,7 +8,7 @@ $dbname = "skillswap";
 } else {
 $servername = "talsprddb02.int.its.rmit.edu.au";
 $username = "s4097208";
-$password = "p@$$w0rd";
+$password = 'p@$$w0rd';
 $dbname = "s4097208";
 }
 // Create connection
