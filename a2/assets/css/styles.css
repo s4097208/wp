@@ -38,6 +38,10 @@ tbody tr td:first-child {
   color: #cd4f07;
 }
 
+.img-thumbnail {
+  width: 300px;
+}
+
 
 #skillCarousel {
   margin: 0 auto;   
@@ -153,3 +157,19 @@ tbody tr td:first-child {
 }
 
 
+.Details {
+  border-radius: 30px;
+  border: none;
+  color: #fff5f8;
+  background-color: #cd4f07;
+  padding: 6px 12px;
+  text-decoration: none;
+
+}
+h1,h4 {
+  color: #cd4f07;
+}
+.category{
+  font-weight: bold;
+  color: #cd4f07;
+}
