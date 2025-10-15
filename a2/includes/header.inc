@@ -26,5 +26,8 @@ ini_set('display_errors', 1);
 </head>
 
 <body>
-
+<header>
 <?php include 'includes/nav.inc';?>
+</header>
+
+
