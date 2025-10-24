@@ -64,17 +64,20 @@
 
       <!-- Search -->
       <form class="d-flex ms-lg-3" action="search.php" method="GET" role="search">
-        <input 
-          class="form-control search-box" 
-          type="search" 
-          name="query" 
-          placeholder="Search skills" 
-          aria-label="Search" 
-        >
-      </form>
-    </div>
+  <div class="position-relative w-100">
+    <span class="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-2 text-muted">
+      search
+    </span>
+    <input 
+      class="form-control ps-5 search-box" 
+      type="search" 
+      name="query" 
+      placeholder="Search skills" 
+      aria-label="Search"
+    >
   </div>
-</nav>
+</form>
+
 
 <!-- Alerts -->
 <?php if (isset($_SESSION['message'])) { ?>
