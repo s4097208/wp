@@ -3,8 +3,12 @@ $pageTitle = "All Skills - SkillSwap";
 include 'includes/header.inc';
 include 'includes/db_connect.inc';
 
-$sql = "SELECT * FROM skills";
-$records = $conn->query($sql);
+$sql = "SELECT s.*, u.username 
+        FROM skills s
+        LEFT JOIN users u ON s.user_id = u.user_id";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$records = $stmt->get_result();
 ?>
 
 <main>
@@ -27,17 +31,21 @@ $records = $conn->query($sql);
                 <th>Category</th>
                 <th>Level</th>
                 <th>Rate ($/hr)</th>
+                <th>Instructor</th>
               </tr>
             </thead>
             <tbody>
               <?php
               if ($records && $records->num_rows > 0) {
                 foreach ($records as $row) {
+                  $instructorName = htmlspecialchars($row['username']);
+                  $instructorId = htmlspecialchars($row['user_id']);
                   echo "<tr>";
                   echo "<td><a href='details.php?id=" . $row['skill_id'] . "'>" . htmlspecialchars($row['title']) . "</a></td>";
                   echo "<td>" . htmlspecialchars($row['category']) . "</td>";
                   echo "<td>" . htmlspecialchars($row['level']) . "</td>";
                   echo "<td>" . htmlspecialchars($row['rate_per_hr']) . "</td>";
+                  echo "<td><a href='instructor.php?id=" . $instructorId . "'>" . $instructorName . "</a></td>";
                   echo "</tr>";
                 }
               } else {
