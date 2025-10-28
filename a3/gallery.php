@@ -13,12 +13,27 @@ $records = $conn->query($sql);
       <h2>Skills Gallery</h2>
       <p class="text-muted">Browse skills shared by the community</p>
     </div>
+    <div class="mb-4">
+      <label for="categoryFilter" class="form-label">Filter by Category:</label>
+      <select id="categoryFilter" class="form-select w-25">
+        <option value="all">All</option>
+        <?php
+        $catQuery = "SELECT DISTINCT category FROM skills";
+        $catStmt = $conn->prepare($catQuery);
+        $catStmt->execute();
+        $catResult = $catStmt->get_result();
+        while ($catRow = $catResult->fetch_assoc()) {
+          echo "<option value='" . htmlspecialchars($catRow['category']) . "'>" . htmlspecialchars($catRow['category']) . "</option>";
+        }
+        ?>
+      </select>
+    </div>
 
     <div class="row g-4 skills-gallery">
       <?php
       if ($records && $records->num_rows > 0) {
         foreach ($records as $row) {
-          echo '<div class="col-lg-3 col-sm-6 col-12">';
+          echo '<div class="col-lg-3 col-sm-6 col-12 gallery-item" data-category="' . htmlspecialchars($row['category']) . '">';
           echo "<img 
                   src='assets/images/skills/" . htmlspecialchars($row['image_path']) . "' 
                   alt='" . htmlspecialchars($row['description']) . "' 

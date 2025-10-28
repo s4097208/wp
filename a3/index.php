@@ -4,8 +4,18 @@ include 'includes/header.inc';
 include 'includes/db_connect.inc';
 
 // get the latest 4 skills from the database
-$sql = "SELECT * FROM skills ORDER BY skill_id DESC LIMIT 4";
-$records = $conn->query($sql);
+$stmt = $conn->prepare("
+    SELECT s.*, u.username 
+    FROM skills s
+    JOIN users u ON s.user_id = u.user_id
+    ORDER BY s.skill_id DESC
+    LIMIT ?
+");
+$limit = 4;
+$stmt->bind_param("i", $limit);
+$stmt->execute();
+$records = $stmt->get_result();
+
 
 // store skills in array
 $skills = [];
@@ -14,6 +24,7 @@ if ($records && $records->num_rows > 0) {
     $skills[] = $row;
   }
 }
+$stmt->close();
 ?>
 
 <main>
@@ -64,6 +75,7 @@ if ($records && $records->num_rows > 0) {
         <?php foreach ($skills as $skill): ?>
           <div class="col-md-3">
             <div class="skill-title"><?= htmlspecialchars($skill['title']) ?></div>
+            <p>Offered by <?php echo htmlspecialchars($skill['username']); ?></p>
             <div class="skill-rate">Rate: $<?= number_format($skill['rate_per_hr'], 2) ?>/hr</div>
           <a class="Details" href="details.php?id=<?php echo urlencode($skill['skill_id']); ?>">
                 View Details

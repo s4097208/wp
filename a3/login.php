@@ -34,7 +34,7 @@ include 'includes/header.inc';
           >
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn-view">Login</button>
       </form>
     </div>
   </div>
