@@ -1,9 +1,26 @@
-  <!-- Footer -->
-  <footer class="footer">
-    <p class="footer-text mb-0">© 2025 Tamana Ali. All rights reserved.</p>
-</footer>
+<footer class="d-flex justify-content-between align-items-center px-5 footer">
+  <div>
+    <?php
+    $sql = "SELECT user_id, username FROM users";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    while ($row = $result->fetch_assoc()) {
+      $userId = htmlspecialchars($row['user_id']);
+      $username = htmlspecialchars($row['username']);
+      echo '<a href="instructor.php?id=' . $userId . '" class="me-3">' . $username . '</a>';
+    }
+
+    $stmt->close();
+    $conn->close();
+    ?>
+  </div>
+
+  <p class="p-5 my-auto mb-0">
+    &copy; 2025 SkillSwap. Tamana Ali. All Rights Reserved.
+  </p>
+</footer>
 </body>
-</html>
+
+</html> 
