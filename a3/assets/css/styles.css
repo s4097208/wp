@@ -141,6 +141,7 @@ tbody tr td:first-child {
   color: white;
   border-radius: 20px;
   padding: 5px 15px;
+  text-decoration: none;
 }
 .required {
   color: red;
@@ -172,4 +173,8 @@ h1,h4 {
 .category{
   font-weight: bold;
   color: #cd4f07;
+}
+footer a {
+  color: #fff5f8;
+  text-decoration: none;
 }
